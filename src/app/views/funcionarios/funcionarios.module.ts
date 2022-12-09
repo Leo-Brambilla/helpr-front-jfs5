@@ -5,12 +5,14 @@ import { FuncionariosRoutingModule } from './funcionarios-routing.module';
 import { FuncionariosComponent } from './funcionarios/funcionarios.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AvatarPipe } from '../../pipes/avatar.pipe';
 
 
 @NgModule({
   declarations: [
-    FuncionariosComponent
+    FuncionariosComponent,
+    AvatarPipe
   ],
   imports: [
     CommonModule,
