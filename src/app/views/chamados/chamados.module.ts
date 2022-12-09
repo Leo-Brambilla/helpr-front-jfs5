@@ -8,13 +8,15 @@ import { ChamadosRoutingModule } from './chamados-routing.module';
 import { ChamadosComponent } from './chamados/chamados.component';
 import { NewChamadoComponent } from './new-chamado/new-chamado.component';
 import { EditChamadoComponent } from './edit-chamado/edit-chamado.component';
+import { DialogChamadoComponent } from './chamados/dialog-chamado/dialog-chamado.component';
 
 
 @NgModule({
   declarations: [
     ChamadosComponent,
     NewChamadoComponent,
-    EditChamadoComponent
+    EditChamadoComponent,
+    DialogChamadoComponent
   ],
   imports: [
     CommonModule,
