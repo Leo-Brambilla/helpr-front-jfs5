@@ -8,13 +8,15 @@ import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClientesComponent } from './clientes/clientes.component';
 import { NewClienteComponent } from './new-cliente/new-cliente.component';
 import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
+import { DialogClienteComponent } from './clientes/dialog-cliente/dialog-cliente.component';
 
 
 @NgModule({
   declarations: [
     ClientesComponent,
     NewClienteComponent,
-    EditClienteComponent
+    EditClienteComponent,
+    DialogClienteComponent
   ],
   imports: [
     CommonModule,
