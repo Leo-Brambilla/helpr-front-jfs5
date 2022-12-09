@@ -123,6 +123,9 @@
             ],
             "scripts": []
           }
+        },
+        "cli": {
+          "analytics": false
         }
       }
     }
