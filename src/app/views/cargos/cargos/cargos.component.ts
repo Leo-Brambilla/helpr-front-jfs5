@@ -25,13 +25,12 @@ export class CargosComponent implements OnInit {
   }
 
   public delete(id: number): void {
-    let ok = confirm("Tem certeza que deseja excluir?");
+    let ok = confirm("Confirma a exclusao?");
     if(ok) {
       this.cargoService.delete(id).subscribe(() => {
-        alert("Cargo excluido.");
+        alert("Cargo EXCLUIDO!");
         this.initializeTable();
       });
     }
   }
-
 }
