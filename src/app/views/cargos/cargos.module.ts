@@ -6,11 +6,13 @@ import { CargosComponent } from './cargos/cargos.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewCargoComponent } from './new-cargo/new-cargo.component';
 
 
 @NgModule({
   declarations: [
-    CargosComponent
+    CargosComponent,
+    NewCargoComponent
   ],
   imports: [
     CommonModule,
