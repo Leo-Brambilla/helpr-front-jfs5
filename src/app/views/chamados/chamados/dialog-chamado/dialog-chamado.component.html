@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Detalhes do Chamado</h1>
+
+<p><strong>Id: </strong> {{chamado.idChamado}}</p>
+<p><strong>Título: </strong> {{chamado.titulo}}</p>
+<p><strong>Descrição: </strong> {{chamado.descricao}}</p>
+<p><strong>Data de Abertura: </strong> {{chamado.dataAbertura}}</p>
+<p><strong>Data de Fechamento: </strong> {{chamado.dataFechamento}}</p>
+<p><strong>Status: </strong> {{chamado.status}}</p>
+<p><strong>Funcionário: </strong> {{chamado.funcionario}}</p>
+<p><strong>Cliente: </strong> {{chamado.cliente.nome}}</p>
+
+
+
+  
+
+<button mat-button (click)="fechar()">fechar</button>
+  
+
+
+
