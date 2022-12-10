@@ -13,12 +13,13 @@ const routes: Routes = [
     path: 'new',
     component: NewFuncionarioComponent
   }
-
-
+  /*{
+    path: 'edit/:id',
+    component: EditFuncionarioComponent
+  }*/
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-
   exports: [RouterModule],
 })
 export class FuncionariosRoutingModule {}
