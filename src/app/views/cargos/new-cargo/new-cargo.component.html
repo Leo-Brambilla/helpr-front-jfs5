@@ -1,1 +1,25 @@
-<p>new-cargo works!</p>
+<app-nav-bar>
+    <ng-container>
+    <h2>Cadastrar Novo Cargo</h2>
+    <form [formGroup]="formCargo">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input type="text" name="nome" matInput placeholder="Ex. Funcao..." formControlName="nome">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea name="descricao" matInput placeholder="Ex. Descrever o que o cargo exige..."
+            formControlName="descricao" rows="2"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Salario</mat-label>
+            <input type="number" name="salario" matInput placeholder="Ex. 25000" formControlName="salario">
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" (click)="create()">Cadastrar</button>
+            <a type="button" mat-raised-button color="warn" routerLink="/cargos">Cancelar</a>
+    </form>
+    </ng-container>
+</app-nav-bar>
