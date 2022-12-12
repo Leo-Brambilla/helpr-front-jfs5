@@ -19,7 +19,7 @@ import { EditFuncionarioComponent } from './edit-funcionario/edit-funcionario.co
     FuncionariosComponent,
     AvatarPipe,
     NewFuncionarioComponent,
-    DialogFuncionarioComponent
+    DialogFuncionarioComponent,
     EditFuncionarioComponent
 
   ],
