@@ -1,3 +1,4 @@
+import { FuncionarioService } from './../../../services/funcionario.service';
 import { NgForm } from '@angular/forms';
 import { ClienteService } from './../../../services/cliente.service';
 import { ChamadoService } from './../../../services/chamado.service';
@@ -46,7 +47,9 @@ export class EditChamadoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private chamadoService: ChamadoService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private funcionarioService: FuncionarioService
+
   ) { }
 
   ngOnInit(): void {
@@ -62,13 +65,8 @@ export class EditChamadoComponent implements OnInit {
   }
 
   private initializeFuncionarios(): void {
-    this.funcionarios.push({
-      id: 1,
-      nome: "Renato Pereira"
-    },
-    {
-      id: 2,
-      nome: "Victor Icoma"
+    this.funcionarioService.findAll().subscribe(funcionarios => {
+      this.funcionarios = funcionarios;
     });
   }
 
