@@ -1,3 +1,6 @@
+
+import { Cargo } from "./cargo";
+
 export interface Funcionario {
   id?: number,
   nome: string,
@@ -5,5 +8,5 @@ export interface Funcionario {
   cpf: string,
   senha?: string,
   foto?: string,
-  cargo: string
+  cargo: Cargo
 }

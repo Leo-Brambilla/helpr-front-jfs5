@@ -9,12 +9,19 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AvatarPipe } from '../../pipes/avatar.pipe';
 import { NewFuncionarioComponent } from './new-funcionario/new-funcionario.component';
 
+import { DialogFuncionarioComponent } from './funcionarios/dialog-funcionario/dialog-funcionario.component';
+import { EditFuncionarioComponent } from './edit-funcionario/edit-funcionario.component';
+
+
 
 @NgModule({
   declarations: [
     FuncionariosComponent,
     AvatarPipe,
-    NewFuncionarioComponent
+    NewFuncionarioComponent,
+    DialogFuncionarioComponent
+    EditFuncionarioComponent
+
   ],
   imports: [
     CommonModule,
