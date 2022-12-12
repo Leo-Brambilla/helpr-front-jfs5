@@ -29,9 +29,8 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Status</mat-label>
                 <mat-select name="status" [(value)]="chamado.status" required>
-                    <mat-option value="RECEBIDO">RECEBIDO</mat-option>
-                    <mat-option value="ATRIBUIDO">ATRIBUIDO</mat-option>
-                    <mat-option value="CONCLUIDO">CONCLUIDO</mat-option>
+                    <mat-option *ngFor="let status of listaStatus" [value]="status">
+                        {{ status }}</mat-option>
                 </mat-select>
             </mat-form-field>
             <button type="submit" mat-raised-button color="primary" (click)="update(formEdit)">Editar</button>

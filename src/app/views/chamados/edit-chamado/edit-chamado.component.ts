@@ -1,4 +1,5 @@
-import { FuncionarioService } from './../../../services/funcionario.service';
+import { StatusChamado } from './../../../enums/status.enums';
+import { FuncionarioService } from './../../../services/funcionario.service'
 import { NgForm } from '@angular/forms';
 import { ClienteService } from './../../../services/cliente.service';
 import { ChamadoService } from './../../../services/chamado.service';
@@ -16,6 +17,7 @@ export class EditChamadoComponent implements OnInit {
 
   public clientes: Cliente[] = [];
   public funcionarios: any = [];
+  public listaStatus: StatusChamado[] = [];
 
   private funcionarioEmpty: any = {
     id: NaN,
@@ -56,6 +58,15 @@ export class EditChamadoComponent implements OnInit {
     this.initializeClientes();
     this.initializeFuncionarios();
     this.initializeChamado();
+    this.initializeStatusChamado();
+  }
+
+  private initializeStatusChamado(): void {
+    this.listaStatus.push(
+        StatusChamado.RECEBIDO,
+        StatusChamado.ATRIBUIDO,
+        StatusChamado.CONCLUIDO
+    )
   }
 
   private initializeClientes(): void {
@@ -87,6 +98,7 @@ export class EditChamadoComponent implements OnInit {
     if (form.valid) {
       this.chamadoService.update(this.chamado).subscribe(chamado => {
         alert("Chamado editado.");
+
       });
     }
     else {
