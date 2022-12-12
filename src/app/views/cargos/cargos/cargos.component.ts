@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Cargo } from 'src/app/models/cargo';
 import { CargoService } from 'src/app/services/cargo.service';
+import { DialogCargoComponent } from './dialog-cargo/dialog-cargo.component';
 
 @Component({
   selector: 'app-cargos',
@@ -9,13 +11,24 @@ import { CargoService } from 'src/app/services/cargo.service';
 })
 export class CargosComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'nome', 'descricao', 'salario', 'editar', 'excluir'];
+  displayedColumns: string[] = ['id', 'nome', 'descricao', 'salario', 'editar', 'excluir', 'detalhes'];
   dataSource: Cargo[] = [];
 
-  constructor(private cargoService: CargoService) { }
+  constructor(private cargoService: CargoService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.initializeTable();
+  }
+
+  detalheCargo(cargo: Cargo): void {
+    const dialogRef = this.dialog.open(DialogCargoComponent, {
+      data: cargo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
   }
 
   private initializeTable(): void {
