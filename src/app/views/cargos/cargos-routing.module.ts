@@ -1,3 +1,4 @@
+import { EditCargosComponent } from './edit-cargos/edit-cargos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CargosComponent } from './cargos/cargos.component';
@@ -12,11 +13,11 @@ const routes: Routes = [
     path: 'new',
     component: NewCargoComponent
   },
-  /*{
+  {
     path: 'edit/:id',
-    component: EditCargoComponent
-  }*/
-];
+    component: EditCargosComponent
+  }
+]
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
