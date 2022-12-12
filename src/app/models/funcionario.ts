@@ -1,3 +1,4 @@
+
 import { Cargo } from "./cargo";
 
 export interface Funcionario {

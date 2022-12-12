@@ -16,8 +16,20 @@ export class ClientesComponent implements OnInit {
 
   constructor(private clienteService: ClienteService, public dialog: MatDialog) { }
 
+
+  spinner: boolean = true
+  
+
   ngOnInit(): void {
     this.initializeTable();
+  }
+
+  private initializeTable(): void {
+    setTimeout(()=> this.clienteService.findAll().subscribe(clientes => {
+      this.dataSource = clientes;
+      this.spinner = false; 
+      
+  }), 500)
   }
 
   detalheCliente(cliente: Cliente): void {
@@ -31,11 +43,7 @@ export class ClientesComponent implements OnInit {
     });
   }
 
-  private initializeTable(): void {
-    this.clienteService.findAll().subscribe(clientes => {
-      this.dataSource = clientes;
-    });
-  }
+  
 
   public delete(id: number): void {
     let ok = confirm("Tem certeza que deseja excluir?");

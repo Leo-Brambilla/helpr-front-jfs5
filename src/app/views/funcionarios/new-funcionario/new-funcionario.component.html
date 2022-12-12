@@ -1,6 +1,6 @@
 <app-nav-bar>
     <ng-container>
-        <h2>Cadastrar Funcionario</h2>
+        <h2>Cadastrar Novo Funcionario</h2>
         <form [formGroup]="formFuncionario">
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Nome</mat-label>
@@ -20,7 +20,11 @@
             </mat-form-field>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Cargo</mat-label>
-                <input type="text" name="cargo" matInput formControlName="cargo">
+                <mat-select name="cargo" formControlName="cargo">
+                    <mat-option *ngFor="let cargo of cargos" [value]="cargo">
+                        {{cargo.nome}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
             <button type="submit" mat-raised-button color="primary" (click)="create()">Cadastrar</button>
             <a type="button" mat-raised-button color="warn" routerLink="/funcionarios">Cancelar</a>

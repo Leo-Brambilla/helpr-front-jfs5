@@ -8,7 +8,10 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AvatarPipe } from '../../pipes/avatar.pipe';
 import { NewFuncionarioComponent } from './new-funcionario/new-funcionario.component';
+
 import { DialogFuncionarioComponent } from './funcionarios/dialog-funcionario/dialog-funcionario.component';
+import { EditFuncionarioComponent } from './edit-funcionario/edit-funcionario.component';
+
 
 
 @NgModule({
@@ -17,6 +20,8 @@ import { DialogFuncionarioComponent } from './funcionarios/dialog-funcionario/di
     AvatarPipe,
     NewFuncionarioComponent,
     DialogFuncionarioComponent
+    EditFuncionarioComponent
+
   ],
   imports: [
     CommonModule,

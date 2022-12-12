@@ -21,6 +21,7 @@ export class CargoService {
     );
   }
 
+
   public delete(id: number): Observable<Cargo> {
     return this.http.delete<Cargo>(`${API_CONFIG.baseUrl}/cargos/${id}`).pipe(
       catchError(error => {
@@ -29,5 +30,15 @@ export class CargoService {
         return EMPTY;
       })
     );
+  }
+
+  public create(cargo: Cargo): Observable<Cargo>{
+    return this.http.post<Cargo>(`${API_CONFIG.baseUrl}/cargos`, cargo).pipe(
+      catchError(error =>{
+        alert("Erro ao cadastrar novo cargo.");
+        console.log(error);
+        return EMPTY;
+      })
+    )
   }
 }
