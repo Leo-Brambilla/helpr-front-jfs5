@@ -7,12 +7,14 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCargoComponent } from './new-cargo/new-cargo.component';
+import { DialogCargoComponent } from './cargos/dialog-cargo/dialog-cargo.component';
 
 
 @NgModule({
   declarations: [
     CargosComponent,
-    NewCargoComponent
+    NewCargoComponent,
+    DialogCargoComponent
   ],
   imports: [
     CommonModule,
