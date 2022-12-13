@@ -9,7 +9,7 @@ import { ChamadosComponent } from './chamados/chamados.component';
 import { NewChamadoComponent } from './new-chamado/new-chamado.component';
 import { EditChamadoComponent } from './edit-chamado/edit-chamado.component';
 import { DialogChamadoComponent } from './chamados/dialog-chamado/dialog-chamado.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { DialogChamadoComponent } from './chamados/dialog-chamado/dialog-chamado
     ComponentsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ChamadosModule { }
