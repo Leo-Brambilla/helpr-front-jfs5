@@ -11,7 +11,7 @@ import { NewFuncionarioComponent } from './new-funcionario/new-funcionario.compo
 
 import { DialogFuncionarioComponent } from './funcionarios/dialog-funcionario/dialog-funcionario.component';
 import { EditFuncionarioComponent } from './edit-funcionario/edit-funcionario.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { EditFuncionarioComponent } from './edit-funcionario/edit-funcionario.co
     ComponentsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class FuncionariosModule { }
