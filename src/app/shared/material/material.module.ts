@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
-//import { Component } from '@angular/core';
+
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatListModule,
     MatTableModule,
     MatSelectModule
-    //Component
+   
 
   ]
 })

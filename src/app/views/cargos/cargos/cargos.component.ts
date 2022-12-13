@@ -16,8 +16,18 @@ export class CargosComponent implements OnInit {
 
   constructor(private cargoService: CargoService, public dialog: MatDialog) { }
 
+  spinner: boolean = true
+
   ngOnInit(): void {
     this.initializeTable();
+  }
+
+    private initializeTable(): void {
+    setTimeout(()=> this.cargoService.findAll().subscribe(cargos => {
+      this.dataSource = cargos;
+      this.spinner = false; 
+      
+  }), 500)
   }
 
   detalheCargo(cargo: Cargo): void {
@@ -31,11 +41,8 @@ export class CargosComponent implements OnInit {
     });
   }
 
-  private initializeTable(): void {
-    this.cargoService.findAll().subscribe(cargos => {
-      this.dataSource = cargos;
-    });
-  }
+  
+  
 
   public delete(id: number): void {
     let ok = confirm("Confirma a exclusao?");

@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCargoComponent } from './new-cargo/new-cargo.component';
 import { EditCargosComponent } from './edit-cargos/edit-cargos.component';
 import { DialogCargoComponent } from './cargos/dialog-cargo/dialog-cargo.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { DialogCargoComponent } from './cargos/dialog-cargo/dialog-cargo.compone
     ComponentsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class CargosModule { }
