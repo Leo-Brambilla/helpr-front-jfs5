@@ -15,9 +15,19 @@ export class ChamadosComponent implements OnInit {
   dataSource: Chamado[] = [];
 
   constructor(private chamadoService: ChamadoService, public dialog: MatDialog) { }
+    
+  spinner: boolean = true
 
   ngOnInit(): void {
     this.initializeTable();
+  }
+
+  private initializeTable(): void {
+    setTimeout(()=> this.chamadoService.findAll().subscribe(chamados => {
+      this.dataSource = chamados;
+      this.spinner = false; 
+      
+  }), 500)
   }
 
   detalheChamado(chamado: Chamado): void {
@@ -30,10 +40,5 @@ export class ChamadosComponent implements OnInit {
       
     });
   }
-
-  private initializeTable(): void {
-    this.chamadoService.findAll().subscribe(chamados => {
-      this.dataSource = chamados;
-    });
-  }
+  
 }
