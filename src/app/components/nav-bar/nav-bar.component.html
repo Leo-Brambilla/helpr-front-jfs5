@@ -1,4 +1,4 @@
-<mat-drawer-container autosize>
+<mat-drawer-container autosize [ngClass]="theme">
 
     <mat-drawer #drawer mode="over">
         <mat-nav-list>
@@ -34,7 +34,10 @@
             <button type="button" mat-icon-button (click)="drawer.toggle()">
                 <i class="material-icons">menu</i>
             </button>
+            <button mat-button (click)="switchTheme()" class="themeButton"><i class="material-icons">light_mode</i></button>
         </mat-toolbar>
+         
+        
 
         <div class="container">
             <ng-content></ng-content>
