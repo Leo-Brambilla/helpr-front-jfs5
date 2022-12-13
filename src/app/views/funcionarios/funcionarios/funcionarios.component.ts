@@ -16,8 +16,18 @@ export class FuncionariosComponent implements OnInit {
 
   constructor(private funcionarioService: FuncionarioService, public dialog: MatDialog) { }
 
+  spinner: boolean = true
+
   ngOnInit(): void {
     this.initializeTable();
+  }
+
+  private initializeTable(): void {
+    setTimeout(() => this.funcionarioService.findAll().subscribe(funcionarios => {
+      this.dataSource = funcionarios;
+      this.spinner = false; 
+      
+  }), 500)
   }
 
   detalheFuncionario(funcionario: Funcionario): void {
@@ -31,11 +41,7 @@ export class FuncionariosComponent implements OnInit {
     });
   }
 
-  private initializeTable(): void {
-    this.funcionarioService.findAll().subscribe(funcionarios => {
-      this.dataSource = funcionarios;
-    });
-  }
+  
 
   public delete(id: number): void {
     let ok = confirm("Tem certeza que deseja excluir?");
